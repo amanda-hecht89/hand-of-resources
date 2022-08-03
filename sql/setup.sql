@@ -13,7 +13,7 @@ INSERT INTO farm_animals (name, says, image)
 VALUES
 (
     'Cow'
-    'MOOOOOO'
+    'MOO'
     'https://media.4-paws.org/e/8/2/7/e82789b9dc8a986d3b61c0aa7610affeecb93933/VIER%20PFOTEN_2015-04-27_010-1927x1333.jpg'
 ),
 (
@@ -28,7 +28,7 @@ VALUES
 ),
 (
     'Sheep'
-    'BAAAAAAAA'
+    'BAA'
     'https://www.ciwf.eu/media/7430330/sheep-closeup-eating-grass.jpg?anchor=center&mode=crop&width=730&height=400&rnd=131364863080000000'
 ),
 
