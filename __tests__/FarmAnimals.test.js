@@ -51,6 +51,19 @@ describe('backend-express-template routes', () => {
       image: 'https://cdn.mos.cms.futurecdn.net/BX7vjSt8KMtcBHyisvcSPK-1200-80.jpg'
     });
   });
+  it('#POST /animals should create a new animal', async () => {
+    const newAnimal = {
+      name: '',
+      says: '',
+      image: '',
+    };
+    const res = await request(app).post('/animals').send(newAnimal);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      ...newAnimal,
+    });
+  });
 
 
 
