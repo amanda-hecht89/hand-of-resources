@@ -9,7 +9,6 @@ describe('backend-express-template routes', () => {
   });
   it('#GET /animals should return a list of animals', async () => {
     const res = await request(app).get('/animals');
-    console.log(res.status);
     expect(res.status).toEqual(200);
     expect(res.body).toEqual([
       {
@@ -42,6 +41,24 @@ describe('backend-express-template routes', () => {
       }
     ]);
   });
+  it('#GET animals/:id should return a single animal', async () => {
+    const res = await request(app).get('/animal/2');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '3',
+      name: 'Chicken',
+      says: 'CLUCK',
+      image: 'https://cdn.mos.cms.futurecdn.net/BX7vjSt8KMtcBHyisvcSPK-1200-80.jpg'
+    });
+  });
+
+
+
+
+
+
+
+
   afterAll(() => {
     pool.end();
   });

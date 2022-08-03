@@ -2,13 +2,14 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP table if EXISTS animals;
 
+
+
 CREATE TABLE animals (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR,
     says VARCHAR,
     image VARCHAR
 );
-
 INSERT INTO animals (name, says, image)
 VALUES
 (
@@ -31,4 +32,13 @@ VALUES
     'BAA',
     'https://www.ciwf.eu/media/7430330/sheep-closeup-eating-grass.jpg?anchor=center&mode=crop&width=730&height=400&rnd=131364863080000000'
 );
+
+
+
+
+
+
+
+
+
 
