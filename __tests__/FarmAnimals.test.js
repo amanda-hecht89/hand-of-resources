@@ -9,7 +9,8 @@ describe('backend-express-template routes', () => {
   });
   it('#GET /animals should return a list of animals', async () => {
     const res = await request(app).get('/animals');
-    expect(res.status).toBe(200);
+    console.log(res.status);
+    expect(res.status).toEqual(200);
     expect(res.body).toEqual([
       {
         id: '1',
