@@ -37,6 +37,22 @@ describe('backend-express-template routes', () => {
     });
   });
 });
+it('#POST /killers should create a new killer', async () => {
+  const newKiller = {
+    'name': 'Harold Shipman',
+    'victims': 218,
+    'born': 1946,
+    'convicted': 2000,
+  };
+  const res = await request(app).post('/killers').send(newKiller);
+  // expect(res.status).toBe(200);
+  expect(res.body).toEqual({
+    id: expect.any(String),
+    ...newKiller,
+  });
+});
+
+
 afterAll(() => {
   pool.end();
 });
