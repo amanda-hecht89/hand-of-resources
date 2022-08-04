@@ -64,6 +64,13 @@ describe('backend-express-template routes', () => {
       ...newAnimal,
     });
   });
+  it('#PUT /animals/:id should update an existing animal', async () => {
+    const resp = await request(app).put('/animals/2').send({
+      name: 'Pony',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.name).toBe('Pony');
+  });
 
 
 
