@@ -55,8 +55,14 @@ it('#PUT /killers/:id should update an existing Killers', async () => {
   const resp = await request(app).put('/killers/4').send({
     name: 'Jack the Ripper',
   });
-//   expect(resp.status).toBe(200);
+  expect(resp.status).toBe(200);
   expect(resp.body.name).toBe('Jack the Ripper');
+});
+it('#DELETE /killers/:id should delete an killer', async () => {
+  const res = await request(app).delete('/killers/1');
+  expect(res.status).toBe(200);
+  const animalResp = await request(app).get('/killers/1');
+  expect(animalResp.status).toBe(404);
 });
 
 
