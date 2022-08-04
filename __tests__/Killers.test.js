@@ -45,7 +45,7 @@ it('#POST /killers should create a new killer', async () => {
     'convicted': 2000,
   };
   const res = await request(app).post('/killers').send(newKiller);
-  // expect(res.status).toBe(200);
+//   expect(res.status).toBe(200);
   expect(res.body).toEqual({
     id: expect.any(String),
     ...newKiller,
