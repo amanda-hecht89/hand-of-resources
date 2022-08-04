@@ -26,14 +26,14 @@ describe('backend-express-template routes', () => {
     );
   });
   it('#GET killers/:id should return a single killer', async () => {
-    const res = await request(app).get('/killers/');
+    const res = await request(app).get('/killers/2');
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       id: '2',
       name: 'Jeffrey Dahmer',
-      victims: '17',
-      born: '1096',
-      convicted: '1992'
+      victims: 17,
+      born: 1960,
+      convicted: 1992
     });
   });
 });
