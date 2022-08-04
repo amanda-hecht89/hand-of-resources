@@ -45,11 +45,18 @@ it('#POST /killers should create a new killer', async () => {
     'convicted': 2000,
   };
   const res = await request(app).post('/killers').send(newKiller);
-//   expect(res.status).toBe(200);
+  //   expect(res.status).toBe(200);
   expect(res.body).toEqual({
     id: expect.any(String),
     ...newKiller,
   });
+});
+it('#PUT /killers/:id should update an existing Killers', async () => {
+  const resp = await request(app).put('/killers/4').send({
+    name: 'Jack the Ripper',
+  });
+  expect(resp.status).toBe(200);
+  expect(resp.body.name).toBe('Jack the Ripper');
 });
 
 
