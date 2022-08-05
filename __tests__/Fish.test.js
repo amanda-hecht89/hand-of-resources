@@ -47,7 +47,13 @@ describe('backend-express-template routes', () => {
       ...newFish,
     });
   });
-
+  it('#PUT /fishes/:id should update an existing fish', async () => {
+    const resp = await request(app).put('/fishes/2').send({
+      ocean: 'Pacific',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.name).toBe('Pacific');
+  });
 
 
 
