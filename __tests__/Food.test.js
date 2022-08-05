@@ -21,6 +21,16 @@ describe('backend-express-template routes', () => {
       )
     ]));
   });
+  it('#GET orders/:id should return a single order', async () => {
+    const res = await request(app).get('/orders/2');
+    // expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '2',
+      name: 'KFC',
+      location: 'chicken',
+      movie: 'person'
+    });
+  });
 
 
 
