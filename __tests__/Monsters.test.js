@@ -31,6 +31,19 @@ describe('backend-express-template routes', () => {
       movie: 'World War Z'
     });
   });
+  it('#POST /monsters should create a new monster', async () => {
+    const newMonster = {
+      'name': 'Skeleton',
+      'location': 'body',
+      'movie': 'Coco',
+    };
+    const res = await request(app).post('/monsters').send(newMonster);
+    // expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      ...newMonster,
+    });
+  });
 
 
 
