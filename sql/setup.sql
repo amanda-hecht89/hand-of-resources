@@ -4,6 +4,7 @@ DROP table if EXISTS animals;
 Drop table if EXISTS killers;
 DROP table if EXISTS fishes;
 DROP table if EXISTS monsters;
+DROP table if EXISTS orders;
 
 
 
@@ -34,6 +35,13 @@ CREATE TABLE monsters (
     name VARCHAR,
     location VARCHAR,
     movie VARCHAR
+);
+
+CREATE TABLE orders (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR,
+    type VARCHAR,
+    mascot VARCHAR
 );
 
 INSERT INTO animals (name, says, image)
@@ -132,6 +140,29 @@ VALUES
     'Mummy',
     'coffin',
     'Mummy'
+);
+
+INSERT INTO orders (name, type, mascot)
+VALUES
+(
+    'McDonalds',
+    'burgers',
+    'clown'
+),
+(
+    'KFC',
+    'chicken',
+    'person'
+),
+(
+    'Burger King',
+    'burgers',
+    'king'
+),
+(
+    'Chick-fil-a',
+    'chicken',
+    'cow'
 )
 
 
