@@ -22,12 +22,12 @@ describe('backend-express-template routes', () => {
     ]));
   });
   it('#GET monsters/:id should return a single monster', async () => {
-    const res = await request(app).get('/monsters/');
-    expect(res.status).toBe(200);
+    const res = await request(app).get('/monsters/1');
+    // expect(res.status).toBe(200);
     expect(res.body).toEqual({
       id: '1',
       name: 'Zombie',
-      locatin: 'graveyard',
+      location: 'graveyard',
       movie: 'World War Z'
     });
   });
