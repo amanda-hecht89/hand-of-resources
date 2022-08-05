@@ -46,10 +46,10 @@ describe('backend-express-template routes', () => {
   });
   it('#PUT /orders/:id should update an existing order', async () => {
     const resp = await request(app).put('/orders/2').send({
-      location: 'Colonel',
+      mascot: 'Colonel',
     });
     expect(resp.status).toBe(200);
-    expect(resp.body.location).toBe('Colonel');
+    expect(resp.body.mascot).toBe('Colonel');
   });
 
 
