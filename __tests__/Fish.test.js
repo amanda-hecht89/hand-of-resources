@@ -54,6 +54,12 @@ describe('backend-express-template routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.ocean).toBe('Pacific');
   });
+  it('#DELETE /fishes/:id should delete a fish', async () => {
+    const res = await request(app).delete('/fishes/1');
+    expect(res.status).toBe(200);
+    const fishResp = await request(app).get('/fishes/1');
+    expect(fishResp.status).toBe(404);
+  });
 
 
 
