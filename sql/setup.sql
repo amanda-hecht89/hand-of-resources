@@ -3,6 +3,7 @@
 DROP table if EXISTS animals;
 Drop table if EXISTS killers;
 DROP table if EXISTS fishes;
+DROP table if EXISTS monsters;
 
 
 
@@ -26,6 +27,13 @@ CREATE TABLE killers (
     victims int,
     born int,
     convicted int
+);
+
+CREATE TABLE monsters (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR,
+    location VARCHAR,
+    movie VARCHAR
 );
 
 INSERT INTO animals (name, says, image)
@@ -80,8 +88,6 @@ VALUES
     '1895'
 );
 
-
-
 INSERT INTO fishes (name, habitat, ocean)
 VALUES
 (
@@ -103,6 +109,29 @@ VALUES
     'Yellow Watchman Goby',
     'sand',
     'Pacific'
+);
+
+INSERT INTO monsters (name, location, movie)
+VALUES
+(
+    'Zombie',
+    'graveyard',
+    'World War Z'
+),
+(
+    'Vampire',
+    'coffin',
+    'Draula'
+),
+(
+    'Werewolf',
+    'woods',
+    'Underworld'
+),
+(
+    'Mummy',
+    'coffin',
+    'Mummy'
 )
 
 
