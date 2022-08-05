@@ -31,7 +31,19 @@ describe('backend-express-template routes', () => {
       mascot: 'person'
     });
   });
-
+  it('#POST /orders should create a new order', async () => {
+    const newOrder = {
+      'name': 'Wendys',
+      'type': 'burgers',
+      'mascot': 'person',
+    };
+    const res = await request(app).post('/orders').send(newOrder);
+    // expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      ...newOrder,
+    });
+  });
 
 
 
