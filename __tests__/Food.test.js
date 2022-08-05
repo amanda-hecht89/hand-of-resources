@@ -27,8 +27,8 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual({
       id: '2',
       name: 'KFC',
-      location: 'chicken',
-      movie: 'person'
+      type: 'chicken',
+      mascot: 'person'
     });
   });
 
