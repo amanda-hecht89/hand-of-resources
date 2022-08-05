@@ -85,7 +85,7 @@ VALUES
 INSERT INTO fishes (name, habitat, ocean)
 VALUES
 (
-    'ClownFish',
+    'Clownfish',
     'reef',
     'Pacific'
 ),
