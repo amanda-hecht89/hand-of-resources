@@ -24,6 +24,16 @@ describe('backend-express-template routes', () => {
     ])
     );
   });
+  it('#GET animals/:id should return a single animal', async () => {
+    const res = await request(app).get('/animals/3');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '1',
+      name: 'Clownfish',
+      habitat: 'reef',
+      ocean: 'Pacific'
+    });
+  });
 
 
 
