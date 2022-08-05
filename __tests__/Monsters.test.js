@@ -7,8 +7,8 @@ describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it('#GET /animals should return a list of animals', async () => {
-    const res = await request(app).get('/animals');
+  it('#GET /monsters should return a list of monsters', async () => {
+    const res = await request(app).get('/monsters');
     expect(res.status).toEqual(200);
     expect(res.body).toEqual(expect.arrayContaining([
       expect.objectContaining(
