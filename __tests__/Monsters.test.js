@@ -51,6 +51,12 @@ describe('backend-express-template routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.location).toBe('castle');
   });
+  it('#DELETE /monsters/:id should delete a monster', async () => {
+    const res = await request(app).delete('/monsters/1');
+    expect(res.status).toBe(200);
+    const monsterResp = await request(app).get('/monsters/1');
+    expect(monsterResp.status).toBe(404);
+  });
 
 
 
