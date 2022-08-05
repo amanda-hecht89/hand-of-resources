@@ -44,7 +44,13 @@ describe('backend-express-template routes', () => {
       ...newMonster,
     });
   });
-  
+  it('#PUT /monsters/:id should update an existing monster', async () => {
+    const resp = await request(app).put('/monsters/2').send({
+      location: 'castle',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.location).toBe('castle');
+  });
 
 
 
