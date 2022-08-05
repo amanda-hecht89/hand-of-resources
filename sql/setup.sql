@@ -2,6 +2,7 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP table if EXISTS animals;
 Drop table if EXISTS killers;
+DROP table if EXISTS fishes;
 
 
 
@@ -11,6 +12,22 @@ CREATE TABLE animals (
     says VARCHAR,
     image VARCHAR
 );
+
+CREATE TABLE fishes (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR,
+    habitat VARCHAR,
+    ocean VARCHAR
+);
+
+CREATE TABLE killers (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR,
+    victims int,
+    born int,
+    convicted int
+);
+
 INSERT INTO animals (name, says, image)
 VALUES
 (
@@ -35,13 +52,7 @@ VALUES
 );
 
 
-CREATE TABLE killers (
-    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name VARCHAR,
-    victims int,
-    born int,
-    convicted int
-);
+
 INSERT INTO killers (name, victims, born, convicted)
 VALUES
 (
@@ -67,6 +78,31 @@ VALUES
     '27',
     '1861',
     '1895'
+);
+
+
+
+INSERT INTO fishes (name, habitat, ocean)
+VALUES
+(
+    'ClownFish',
+    'reef',
+    'Pacific'
+),
+(
+    'Blue Tang',
+    'reef',
+    'Atlantic'
+),
+(
+    'Yellow Tang',
+    'reef',
+    'Altantic'
+),
+(
+    'Yellow Watchman Goby',
+    'sand',
+    'Pacific'
 )
 
 
