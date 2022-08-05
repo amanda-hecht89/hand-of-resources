@@ -18,12 +18,26 @@ describe('backend-express-template routes', () => {
           location: expect.any(String),
           movie: expect.any(String)
         }
-
-
       )
-
     ]));
   });
+  it('#GET monsters/:id should return a single monster', async () => {
+    const res = await request(app).get('/monsters/');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '1',
+      name: 'Zombie',
+      locatin: 'graveyard',
+      movie: 'World War Z'
+    });
+  });
+
+
+
+
+
+
+
   afterAll(() => {
     pool.end();
   });
