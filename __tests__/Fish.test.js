@@ -52,7 +52,7 @@ describe('backend-express-template routes', () => {
       ocean: 'Pacific',
     });
     expect(resp.status).toBe(200);
-    expect(resp.body.name).toBe('Pacific');
+    expect(resp.body.ocean).toBe('Pacific');
   });
 
 
