@@ -34,6 +34,19 @@ describe('backend-express-template routes', () => {
       ocean: 'Pacific'
     });
   });
+  it('#POST /fishes should create a new fish', async () => {
+    const newFish = {
+      'name': 'Dogface Puffer',
+      'habitat': 'reef',
+      'ocean': 'Indian',
+    };
+    const res = await request(app).post('/fishes').send(newFish);
+    // expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: expect.any(String),
+      ...newFish,
+    });
+  });
 
 
 
